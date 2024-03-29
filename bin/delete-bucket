@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -eu
+
+source config
+
+aws s3 rb s3://"$BUCKET_NAME" --force

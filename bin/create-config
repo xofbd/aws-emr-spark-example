@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -eu
+
+bucket_name=aws-emr-spark-example-"$(tr -dc 'a-z0-9' < /dev/urandom | fold -w 16 | head -n 1)"
+echo "BUCKET_NAME="$bucket_name"" > config

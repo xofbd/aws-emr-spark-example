@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -eu
+
+source config
+
+aws s3 cp s3://"$BUCKET_NAME" data/ --recursive --exclude "*" --include "output/part-*.csv"

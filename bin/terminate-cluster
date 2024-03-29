@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -eu
+
+cluster_id="$(aws emr list-clusters | jq -r .Clusters[0].Id)"
+aws emr terminate-clusters --cluster-ids "$cluster_id"

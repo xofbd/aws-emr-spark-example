@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -u
+
+source config
+
+aws s3api create-bucket --bucket "$BUCKET_NAME" --region us-east-1
+aws s3 cp data/food_establishment_data.csv  s3://"$BUCKET_NAME"/data/food_establishment_data.csv
+aws s3 cp src/health_violations.py  s3://"$BUCKET_NAME"/src/health_violations.py
