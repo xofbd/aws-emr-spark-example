@@ -14,6 +14,10 @@ $(DATA_DIR)/food_establishment_data.zip: | $(DATA_DIR)
 $(DATA_DIR)/food_establishment_data.csv: $(DATA_DIR)/food_establishment_data.zip 
 	unzip -d $(DATA_DIR) $<
 
+.PHONY: run
+run: $(DATA_DIR)/food_establishment_data.csv
+	python3 src/health_violations.py --data_source $< --output_uri $(DATA_DIR)
+
 .PHONY: clean
 clean:
 	rm -rf $(DATA_DIR)
