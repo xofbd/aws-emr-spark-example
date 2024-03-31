@@ -3,7 +3,6 @@
 set -eu
 
 source config
-key_name=don
 
 aws emr create-default-roles
 
@@ -11,7 +10,6 @@ aws emr create-cluster \
   --name example-emr-cluster \
   --release-label emr-5.36.1 \
   --applications Name=Spark \
-  --ec2-attributes KeyName="$key_name" \
   --instance-type m5.xlarge \
   --instance-count 3 \
   --log-uri s3://"$BUCKET_NAME"/logs \
