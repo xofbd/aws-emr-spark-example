@@ -19,5 +19,7 @@ To run on AWS EMR:
 1. Download output data: `bin/download-output`
 1. See results: `cat data/part-*.csv`
 
+Make sure to shutdown the EMR cluster with `bin/terminate-cluster`. You can also delete the bucket and its conent with `bin/delete-bucket`.
+
 ## License
 This project is distributed under the MIT license. Please see `LICENSE` for more information.
