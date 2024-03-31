@@ -8,7 +8,7 @@ aws emr create-default-roles
 
 aws emr create-cluster \
   --name example-emr-cluster \
-  --release-label emr-5.36.1 \
+  --release-label emr-7.0.0 \
   --applications Name=Spark \
   --instance-type m5.xlarge \
   --instance-count 3 \
