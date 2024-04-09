@@ -10,4 +10,4 @@ cluster_id="$(aws emr list-clusters | jq -r .Clusters[0].Id)"
 # Submit Spark application
 aws emr add-steps \
   --cluster-id "$cluster_id" \
-  --steps Type=Spark,Name=health_violations,ActionOnFailure=CONTINUE,Args=["$BUCKET"/src/health_violations.py,--data_source,"$BUCKET"/data/food_establishment_data.csv,--output_uri,"$BUCKET"/output/]						
+  --steps Type=Spark,Name=health_violations,ActionOnFailure=CONTINUE,Args=["$BUCKET"/src/health_violations.py,--data_source,"$BUCKET"/data/food_establishment_data.csv,--output_uri,"$BUCKET"/output/]
