@@ -6,8 +6,8 @@ An example of running Spark on AWS EMR. Adapated from this [tutorial](https://do
 To run the project locally:
 
 1. Prepare data for S3 upload: `make all`
-1. Run Spark application: `python3 src/health_violations.py --data_source data/food_establishment_data.csv --output_uri data`
-1. See results: `cat data/part-*.csv`
+1. Run Spark application: `python3 src/health_violations.py --data_source data/food_establishment_data.csv --output_uri data/output`
+1. See results: `cat data/output/part-*.csv`
 
 To run on AWS EMR:
 
@@ -17,7 +17,7 @@ To run on AWS EMR:
 1. Create cluster: `bin/create-cluster`
 1. Submit application: `bin/submit-application`
 1. Download output data: `bin/download-output`
-1. See results: `cat data/part-*.csv`
+1. See results: `cat data/output/part-*.csv`
 
 A few more things to consider:
 1. Make sure to shutdown the EMR cluster with `bin/terminate-cluster`. You can also delete the bucket and its conent with `bin/delete-bucket`.
