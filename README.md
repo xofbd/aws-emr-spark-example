@@ -19,7 +19,9 @@ To run on AWS EMR:
 1. Download output data: `bin/download-output`
 1. See results: `cat data/part-*.csv`
 
-Make sure to shutdown the EMR cluster with `bin/terminate-cluster`. You can also delete the bucket and its conent with `bin/delete-bucket`.
+A few more things to consider:
+1. Make sure to shutdown the EMR cluster with `bin/terminate-cluster`. You can also delete the bucket and its conent with `bin/delete-bucket`.
+1. The scripts assume you have [jq](https://jqlang.github.io/jq/) installed. Most linux distribution probably have it already installed. If not, it should be easy to install it.
 
 ## License
 This project is distributed under the MIT license. Please see `LICENSE` for more information.
