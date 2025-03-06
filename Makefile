@@ -53,4 +53,4 @@ clean-local:
 .PHONY: clean-remote
 clean-remote:
 	bin/delete-bucket || true
-	bin/termindate-cluster || true
+	bin/terminate-cluster || true
